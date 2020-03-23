@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "UI Library",
   "main": "dist/index.js",
+  "style": "dist/main.css",
   "scripts": {
     "build": "webpack --mode=production"
   },
