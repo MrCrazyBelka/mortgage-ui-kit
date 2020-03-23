@@ -1,3 +1,16 @@
 import React from 'react';
+import { getText } from './helper';
+import './Button.scss';
 
-export const Button = ({ text }: { text: string}) => <button>{text}</button>;
+
+export const Button = () => {
+
+
+
+  return (
+    <div className="button-container">
+      <button className="button-new">{getText()}</button>
+      <p>Testasdasdsadasdasd</p>
+    </div>
+  );
+};

@@ -13,7 +13,10 @@ module.exports = {
   },
   externals: [nodeExternals()],
   resolve: {
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: [".ts", ".tsx", ".js", ".json", 'scss', 'css'],
+    alias: {
+      assets: path.join(__dirname, './src/assets')
+    }
   },
   module: {
     rules: [

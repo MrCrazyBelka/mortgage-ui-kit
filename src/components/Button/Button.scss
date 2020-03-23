@@ -1,0 +1,13 @@
+@import "../styles/variables";
+
+
+.button-container {
+  .button-new {
+    padding-top: 10px;
+    color: red;
+  }
+
+  p {
+    font-family: $fontFamilyRegular;
+  }
+}
