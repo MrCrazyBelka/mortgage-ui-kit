@@ -5,7 +5,6 @@ module.exports = {
   stories: ['../src/**/*.stories.tsx'],
   addons: ['@storybook/addon-actions', '@storybook/addon-links', '@storybook/addon-knobs'],
   webpackFinal: async config => {
-    config.resolve.extensions.push('.ts', '.tsx', '.js', '.json', 'scss', 'css', 'svg');
     config.resolve.modules.push(path.resolve(__dirname, '../src'), 'node_modules');
 
     config.module.rules.push({
@@ -19,20 +18,27 @@ module.exports = {
 
     config.module.rules.push({
       test: /\.scss$/,
+      sideEffects: true,
       use: ['style-loader', 'css-loader', 'sass-loader'],
       include: path.resolve(__dirname, '../'),
     });
 
 
-    config.module.rules.push({
-      test: /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-      loader: "url-loader",
-      options: {
-        limit: 10000,
-        name: "[name].[hash:8].[ext]",
-      },
+    // fix preview svg https://github.com/storybookjs/storybook/issues/6188
+    config.module.rules = config.module.rules.map( data => {
+      if (/svg\|/.test( String( data.test ) ))
+        data.test = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/;
+      return data;
     });
 
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        { loader: 'url-loader' }
+      ]
+    });
+
+    config.resolve.extensions.push('.ts', '.tsx', '.js', '.json', 'scss', 'css', 'svg');
 
     config.plugins.push(new ForkTsCheckerWebpackPlugin());
 
