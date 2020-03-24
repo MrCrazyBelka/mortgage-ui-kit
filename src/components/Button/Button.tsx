@@ -3,14 +3,11 @@ import { getText } from './helper';
 import './Button.scss';
 
 
-export const Button = () => {
-
-
-
+export const Button = ({ text = '' }: { text: string}) => {
   return (
     <div className="button-container">
       <button className="button-new">{getText()}</button>
-      <p>Testasdasdsadasdasd</p>
+      <p>{text}</p>
     </div>
   );
 };
