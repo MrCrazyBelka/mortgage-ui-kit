@@ -4,7 +4,5 @@ import { text } from '@storybook/addon-knobs';
 import { Button } from '../Button';
 
 storiesOf('Button', module).add('Button', () => {
-  return (
-    <Button text={text('Text', '')}/>
-  );
+  return <Button text={text('Text', '')} />;
 });

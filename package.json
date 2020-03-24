@@ -9,7 +9,9 @@
     "test": "jest --coverage",
     "test:silent": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "eslint": "eslint src/**/*.{ts,tsx}",
+    "eslint:fix": "eslint src/**/*.{ts,tsx} --fix"
   },
   "husky": {
     "hooks": {
@@ -78,6 +80,14 @@
     "url-loader": "^4.0.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "eslint": "^6.8.0",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^2.0.2"
   }
 }
