@@ -2,7 +2,7 @@ import React from 'react';
 import { getText } from './helper';
 import './Button.scss';
 
-export const Button = ({ text = '' }: { text: string }) => {
+const Button = ({ text = '' }: { text: string }) => {
   return (
     <div className="button-container">
       <button className="button-new">{getText()}</button>
@@ -10,3 +10,5 @@ export const Button = ({ text = '' }: { text: string }) => {
     </div>
   );
 };
+
+export default Button;

@@ -10,6 +10,8 @@ interface Icon {
   size?: string;
 }
 
-export const Icon: React.FC<Icon> = ({ of, className, title, size }) => (
+const Icon: React.FC<Icon> = ({ of, className, title, size }) => (
   <i title={title} className={classNames(size, of, 'icon', className)} />
 );
+
+export default Icon;
