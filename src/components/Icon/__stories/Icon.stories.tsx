@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Icon } from '../Icon';
+import Icon from '../Icon';
 import { select } from '@storybook/addon-knobs';
 
 const options = {
